@@ -82,20 +82,7 @@ python src/train.py --test
 
 The evaluation includes commonly used medication recommendation metrics, including Jaccard, PRAUC, F1-score, and DDI Rate.
 
-## Citation
 
-If you find this repository useful, please consider citing our work:
-
-```bibtex
-@article{harpmed2026,
-  title={HARP-Med: History-Aware Residual Personalized Medication Representation Learning for Drug Recommendation},
-  author={},
-  journal={},
-  year={2026}
-}
-```
-
-Citation information will be updated after publication.
 
 ## Acknowledgements
 
