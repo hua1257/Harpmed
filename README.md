@@ -1,52 +1,64 @@
-# HARP-Med: History-Aware Residual Personalized Medication Recommendation
+# HARP-Med
 
-HARP-Med is a history-aware personalized medication recommendation model.
-It leverages patients' longitudinal EHR information to construct personalized
-medication representations for medication combination prediction.
+HARP-Med is a history-aware residual personalized medication recommendation model for predicting appropriate medication combinations based on longitudinal electronic health records.
 
 ## Installation
 
-1. Create a new conda environment:
+1. Create a new Conda environment:
 
 ```bash
 conda create -n HARPmed python=3.8
+```
+
 2. Activate the environment:
+
+```bash
 conda activate HARPmed
+```
 
 3. Install the required packages:
+
+```bash
 pip install -r requirements.txt
+```
 
-Download Data
-1. Download the MIMIC-III dataset from PhysioNet.
-2. Place the required MIMIC-III files into the data/ directory.
+## Download the Data
 
-3.The main files include:
-DIAGNOSES_ICD.csv
-PROCEDURES_ICD.csv
-PRESCRIPTIONS.csv
+1. You must have obtained access to the [MIMIC-III](https://physionet.org/content/mimiciii/1.4/) database before running the code.
 
-4. Download the drug information and DDI-related files following the preprocessing settings of previous medication recommendation studies.
+2. Download the MIMIC-III dataset and place the required files in the `data/` directory.
+
+Specifically, the following files are required:
+
+`DIAGNOSES_ICD.csv`, `PROCEDURES_ICD.csv`, and `PRESCRIPTIONS.csv`.
+
+3. Download the DrugBank drug information and DDI-related files, and place them in the `data/` directory.
 
 The directory can be organized as:
 
+```text
 data/
 ├── DIAGNOSES_ICD.csv
 ├── PROCEDURES_ICD.csv
 ├── PRESCRIPTIONS.csv
 └── ...
-Data Processing
+```
 
-Run the preprocessing script:
+## Process the Data
 
+Run the following command to preprocess the data:
+
+```bash
 python process.py
+```
 
-The processed data will be saved in the corresponding data directory and used
-for model training and evaluation.
+The processed files will be saved in the corresponding data directory and used for model training and evaluation.
 
-Run HARP-Med
+## Run the Model
 
-The main implementation files are located in src/.
+The main implementation files are located in `src/`.
 
+```text
 HARP-Med/
 ├── data/
 ├── src/
@@ -54,34 +66,39 @@ HARP-Med/
 │   └── train.py
 ├── requirements.txt
 └── README.md
+```
 
 Train HARP-Med:
 
+```bash
 python src/train.py
+```
 
 Test the model:
 
+```bash
 python src/train.py --test
+```
 
-The evaluation includes commonly used medication recommendation metrics,
-including Jaccard, PRAUC, F1-score, and DDI Rate.
+The evaluation includes commonly used medication recommendation metrics, including Jaccard, PRAUC, F1-score, and DDI Rate.
 
-Citation
+## Citation
 
 If you find this repository useful, please consider citing our work:
 
+```bibtex
 @article{harpmed2026,
   title={HARP-Med: History-Aware Residual Personalized Medication Representation Learning for Drug Recommendation},
   author={},
   journal={},
   year={2026}
 }
+```
 
 Citation information will be updated after publication.
 
-Acknowledgements
+## Acknowledgements
 
-This implementation is developed based on previous open-source medication
-recommendation frameworks.
+This implementation is developed based on previous open-source medication recommendation frameworks.
 
 We thank the authors of these projects for making their code publicly available.
